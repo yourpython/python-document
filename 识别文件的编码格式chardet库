@@ -1,0 +1,29 @@
+1、chardet下载与安装
+
+下载地址：http://pypi.python.org/pypi/chardet
+
+下载chardet后，解压chardet压缩包，直接将chardet文件夹放在应用程序目录下，就可以使用import chardet开始使用chardet了，也可以将chardet拷贝到Python系统目录下，这样你所有的python程序只要用import chardet就可以了。
+
+python setup.py install
+2、实例
+
+使用中，chardet.detect()返回字典，其中confidence是检测精确度，encoding是编码形式
+
+（1）网页编码判断：
+
+>>> import urllib
+>>> rawdata = urllib.urlopen('http://www.google.cn/').read()
+>>> import chardet
+>>> chardet.detect(rawdata)
+{'confidence': 0.98999999999999999, 'encoding': 'GB2312'}
+（2）文件编码判断
+
+复制代码
+import chardet
+tt=open('c:\\111.txt','rb')
+ff=tt.readline()
+#这里试着换成read(5)也可以，但是换成readlines()后报错
+enc=chardet.detect(ff)
+print enc['encoding']
+tt.close()
+复制代码
