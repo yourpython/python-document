@@ -1,0 +1,8 @@
+1,如果window同时安装python2和python3如何切换执行？
+这里以安装pip为例：python -2 setup.py install
+或者运行代码第一行
+#！python3
+#coding:utf-8
+pip instatll name
+2,设置pycharm的编码
+setting-editor-file encodings
